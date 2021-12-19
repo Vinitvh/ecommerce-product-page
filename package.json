@@ -1,0 +1,20 @@
+{
+  "name": "ecommerce-product-page-main",
+  "version": "1.0.0",
+  "description": "This project is a solution for Frontend mentor's ecommerce-product-page solution.",
+  "main": "main.js",
+  "scripts": {
+    "sass": "sass --watch scss/styles.scss dist/styles.css"
+  },
+  "keywords": [
+    "HTML",
+    "SASS",
+    "Flexbox",
+    "localstorage"
+  ],
+  "author": "Vinitvh",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.45.0"
+  }
+}
