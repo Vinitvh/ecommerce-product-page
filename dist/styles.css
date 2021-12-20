@@ -13,7 +13,7 @@ body {
 }
 
 #main {
-  width: 90%;
+  width: 80%;
   height: 85%;
   background: white;
 }
@@ -62,6 +62,54 @@ nav .container .right-links .cart-icon img {
 nav .container .right-links img {
   width: auto;
   height: 2rem;
+}
+
+main .container {
+  height: auto;
+  width: 70%;
+  margin: auto auto;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+main .container .image img {
+  width: auto;
+  height: 16rem;
+  border-radius: 1rem;
+}
+main .container .image .thumbnail {
+  padding: 1rem 0;
+}
+main .container .image .thumbnail img {
+  width: auto;
+  height: 3.2rem;
+  margin: 0 0.8rem 0 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+main .container .image .thumbnail img:first-child {
+  border: 2px solid #ff7d1a;
+  z-index: 1;
+}
+main .container .image .thumbnail img:first-child::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+main .container .product-info {
+  width: 20rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
