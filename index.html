@@ -26,29 +26,15 @@
           </div>
           <div class="right-links">
             <div class="cart-icon">
-              <img src="/images/icon-cart.svg" alt="cart" /><span cart-value
+              <img src="/images/icon-cart.svg" alt="cart" /><span
+                class="cart-items"
                 >0</span
               >
               <div class="cart-overlay">
                 <p>Cart</p>
                 <hr />
-                <div class="cart-product">
-                  <img
-                    src="/images/image-product-1-thumbnail.jpg"
-                    alt="product-1"
-                  />
-                  <div class="cart-info">
-                    <h6>fall limited edition sneakers</h6>
-                    <p>
-                      $125.00 x 3
-                      <span>$375.00</span>
-                    </p>
-                  </div>
-                  <div class="delete-icon">
-                    <img src="/images/icon-delete.svg" alt="delete" />
-                  </div>
-                </div>
-                <a href="#">Checkout</a>
+                <div class="cart-product"></div>
+                <div class="checkout-btn"></div>
               </div>
             </div>
             <img src="/images/image-avatar.png" alt="avatar" />
@@ -79,15 +65,11 @@
             <span class="orignal-price">$250</span>
             <div class="quantity">
               <span class="qty-icons">
-                <img
-                  src="/images/icon-minus.svg"
-                  alt="minus"
-                  class="increment"
-                />
-                <span>0</span>
-                <img src="/images/icon-plus.svg" alt="plus" class="decrement" />
+                <img src="/images/icon-minus.svg" alt="minus" id="decrement" />
+                <span class="qty">0</span>
+                <img src="/images/icon-plus.svg" alt="plus" id="increment" />
               </span>
-              <a href="#"
+              <a href="#" class="cart-btn"
                 ><img src="/images/icon-cart.svg" alt="cart" />Add To Cart</a
               >
             </div>
