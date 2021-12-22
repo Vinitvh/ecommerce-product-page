@@ -14,7 +14,7 @@ const APP = (function () {
 
     decrement.addEventListener("click", (e) => {
       e.preventDefault();
-      if (qtyDOM.innerText <= 0) {
+      if (qtyDOM.innerText <= 1) {
         decrement.click = false;
       } else {
         qtyDOM.innerText = parseInt(qtyDOM.innerText) - 1;
@@ -39,7 +39,7 @@ const APP = (function () {
             </p>
           </div>
           <div class="delete-icon">
-            <img src="/images/icon-delete.svg" alt="delete" />
+            <img src="/images/icon-delete.svg" alt="delete" class="delete-btn"/>
           </div>
         `;
       checkoutBtn.innerHTML = `<a href="#">Checkout</a>`;
@@ -64,17 +64,11 @@ const APP = (function () {
       e.preventDefault();
       let qtyValue = qtyDOM.textContent;
       qtyValue = parseInt(qtyValue);
-      if (qtyValue === 0) {
-        addCartBtn.click = false;
-        localStorage.setItem("Qty", JSON.stringify(0));
-        localStorage.setItem("Total", JSON.stringify(0));
-        console.log(false);
-      } else {
-        localStorage.setItem("Qty", JSON.stringify(qtyValue));
-        setTotal();
-        displayCart();
-        cartValue();
-      }
+
+      localStorage.setItem("Qty", JSON.stringify(qtyValue));
+      setTotal();
+      displayCart();
+      cartValue();
     });
   };
 
@@ -82,9 +76,9 @@ const APP = (function () {
     let qty = localStorage.getItem("Qty");
     qty = JSON.parse(qty);
 
-    if (qty === 0) cartSpan.textContent = 0;
     cartSpan.textContent = qty;
   };
+
 
   return { manageQty, addToCart, displayCart, cartValue };
 })();
