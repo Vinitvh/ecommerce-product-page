@@ -1,6 +1,8 @@
 const increment = document.getElementById("increment");
 const decrement = document.getElementById("decrement");
 const qtyDOM = document.querySelector(".qty");
+const cartDOM = document.querySelector(".cart-product");
+const checkoutBtn = document.querySelector(".checkout-btn");
 const cartSpan = document.querySelector(".cart-items");
 
 const APP = (function () {
@@ -21,8 +23,6 @@ const APP = (function () {
   };
 
   const displayCart = function () {
-    const cartDOM = document.querySelector(".cart-product");
-    const checkoutBtn = document.querySelector(".checkout-btn");
     const qty = JSON.parse(localStorage.getItem("Qty"));
     const total = JSON.parse(localStorage.getItem("Total"));
 
@@ -49,7 +49,7 @@ const APP = (function () {
   const setTotal = function () {
     let getQty = localStorage.getItem("Qty");
     getQty = JSON.parse(getQty);
-    if (getQty) {
+    if (getQty !== 0) {
       let total = getQty * 125;
       localStorage.setItem("Total", JSON.stringify(total));
     } else {
@@ -66,6 +66,8 @@ const APP = (function () {
       qtyValue = parseInt(qtyValue);
       if (qtyValue === 0) {
         addCartBtn.click = false;
+        localStorage.setItem("Qty", JSON.stringify(0));
+        localStorage.setItem("Total", JSON.stringify(0));
         console.log(false);
       } else {
         localStorage.setItem("Qty", JSON.stringify(qtyValue));
@@ -77,10 +79,11 @@ const APP = (function () {
   };
 
   const cartValue = function () {
-    let getQty = localStorage.getItem("Qty");
-    getQty = JSON.parse(getQty);
+    let qty = localStorage.getItem("Qty");
+    qty = JSON.parse(qty);
 
-    cartSpan.textContent = getQty;
+    if (qty === 0) cartSpan.textContent = 0;
+    cartSpan.textContent = qty;
   };
 
   return { manageQty, addToCart, displayCart, cartValue };
