@@ -501,18 +501,77 @@ main {
     & .carousel-actions button#carousel-next {
       margin-right: 20px;
     }
-  }
 
-  .container-mobile .product-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+    & .product-info {
+      width: 90%;
+      margin: auto 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
 
-  .container-mobile .product-info h2 {
-    color: $orange;
-    font-size: 10px;
+      & .title {
+        color: $orange;
+        margin-bottom: 1rem;
+      }
+
+      & h1 {
+        text-transform: capitalize;
+        font-weight: bolder;
+        margin-bottom: 1rem;
+      }
+
+      & p {
+        color: $grayish-blue;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      & .product-price {
+        color: $black;
+        font-size: 2.2rem;
+        font-weight: 600;
+      }
+
+      & span:first-child {
+        font-size: 1.5rem;
+        font-weight: bolder;
+        color: $orange;
+        padding: 0.1rem 0.2rem;
+        margin-left: 0.5rem;
+        background: $pale-orange;
+        text-decoration: none;
+      }
+
+      & span:nth-child(2) {
+        margin-left: 7rem;
+        font-size: 1.5rem;
+        color: $grayish-blue;
+        text-decoration: line-through;
+        font-weight: bolder;
+      }
+    }
+
+    & .product-info .quantity {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+      & .quantity .qty-icons {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4px 10px;
+        background: $light-grayish-blue;
+
+        & img {
+          cursor: pointer;
+        }
+      }
   }
 }
 

@@ -419,14 +419,65 @@ main .container-mobile .carousel-actions button#carousel-next {
   margin-right: 20px;
 }
 main .container-mobile .product-info {
+  width: 90%;
+  margin: auto 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+main .container-mobile .product-info .title {
+  color: #ff7d1a;
+  margin-bottom: 1rem;
+}
+main .container-mobile .product-info h1 {
+  text-transform: capitalize;
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+main .container-mobile .product-info p {
+  color: #b6bcc8;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+main .container-mobile .product-info .product-price {
+  color: black;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+main .container-mobile .product-info span:first-child {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: #ff7d1a;
+  padding: 0.1rem 0.2rem;
+  margin-left: 0.5rem;
+  background: #ffede0;
+  text-decoration: none;
+}
+main .container-mobile .product-info span:nth-child(2) {
+  margin-left: 7rem;
+  font-size: 1.5rem;
+  color: #b6bcc8;
+  text-decoration: line-through;
+  font-weight: bolder;
+}
+main .container-mobile .product-info .quantity {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-main .container-mobile .product-info h2 {
-  color: #ff7d1a;
-  font-size: 10px;
+main .container-mobile .quantity .qty-icons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 10px;
+  background: #f7f8fd;
+}
+main .container-mobile .quantity .qty-icons img {
+  cursor: pointer;
 }
 
 @media screen and (min-width: 375px) and (max-width: 500px) {
