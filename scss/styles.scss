@@ -195,6 +195,7 @@ nav {
 
 main {
   .container {
+    display: block;
     height: auto;
     width: 70%;
     margin: auto auto;
@@ -445,5 +446,119 @@ main {
 
   .hover-shadow:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+}
+
+// Small screens
+main {
+  .container-mobile {
+    display: none;
+    width: 100%;
+    margin: auto;
+
+    & .carousel {
+      max-width: 100%;
+      overflow: hidden;
+      position: relative;
+
+      & .carousel-item img {
+        width: 100%;
+        max-width: 500px;
+        height: 300px;
+      }
+
+      & .carousel-item,
+      .carousel-item-hidden {
+        display: none;
+      }
+
+      & .carousel-item-visible {
+        display: block;
+      }
+    }
+    & .carousel-actions {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 23%;
+      transform: translateY(-50%);
+    }
+
+    & .carousel-actions button {
+      border-radius: 50px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+    }
+
+    & .carousel-actions button#carousel-prev {
+      margin-left: 10px;
+    }
+
+    & .carousel-actions button#carousel-next {
+      margin-right: 20px;
+    }
+  }
+
+  .container-mobile .product-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container-mobile .product-info h2 {
+    color: $orange;
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 500px) {
+  body {
+    background-color: $white;
+  }
+
+  #main {
+    width: 98%;
+    height: 100%;
+
+    nav {
+      height: 3rem;
+
+      .container {
+        width: 100%;
+        padding: 0 4rem;
+
+        .left-links {
+          & img {
+            width: 100%;
+            height: 1rem;
+          }
+
+          & a {
+            display: none;
+          }
+        }
+
+        & .right-links {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+
+  main {
+    .container {
+      display: none;
+    }
+
+    .container-mobile {
+      display: block;
+    }
   }
 }

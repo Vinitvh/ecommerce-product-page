@@ -156,6 +156,7 @@ nav .container .right-links img:nth-child(2):hover {
 }
 
 main .container {
+  display: block;
   height: auto;
   width: 70%;
   margin: auto auto;
@@ -371,6 +372,98 @@ main .container .quantity a:hover {
 }
 .modal .hover-shadow:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+main .container-mobile {
+  display: none;
+  width: 100%;
+  margin: auto;
+}
+main .container-mobile .carousel {
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+main .container-mobile .carousel .carousel-item img {
+  width: 100%;
+  max-width: 500px;
+  height: 300px;
+}
+main .container-mobile .carousel .carousel-item,
+main .container-mobile .carousel .carousel-item-hidden {
+  display: none;
+}
+main .container-mobile .carousel .carousel-item-visible {
+  display: block;
+}
+main .container-mobile .carousel-actions {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 23%;
+  transform: translateY(-50%);
+}
+main .container-mobile .carousel-actions button {
+  border-radius: 50px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+main .container-mobile .carousel-actions button#carousel-prev {
+  margin-left: 10px;
+}
+main .container-mobile .carousel-actions button#carousel-next {
+  margin-right: 20px;
+}
+main .container-mobile .product-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main .container-mobile .product-info h2 {
+  color: #ff7d1a;
+  font-size: 10px;
+}
+
+@media screen and (min-width: 375px) and (max-width: 500px) {
+  body {
+    background-color: white;
+  }
+
+  #main {
+    width: 98%;
+    height: 100%;
+  }
+  #main nav {
+    height: 3rem;
+  }
+  #main nav .container {
+    width: 100%;
+    padding: 0 4rem;
+  }
+  #main nav .container .left-links img {
+    width: 100%;
+    height: 1rem;
+  }
+  #main nav .container .left-links a {
+    display: none;
+  }
+  #main nav .container .right-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  main .container {
+    display: none;
+  }
+  main .container-mobile {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
