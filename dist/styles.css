@@ -66,16 +66,24 @@ nav .container .right-links .cart-icon img {
   width: auto;
   height: 1.2rem;
 }
+nav .container .right-links .cart-icon .cart-items {
+  position: absolute;
+  top: 1.2rem;
+  font-size: 12px;
+  padding: 1px 4px;
+  border-radius: 100%;
+  background-color: #ff7d1a;
+}
 nav .container .right-links .cart-icon .cart-overlay {
-  opacity: 0;
+  display: none;
   position: absolute;
   top: 4rem;
   left: -6.5rem;
   width: 240px;
   height: 150px;
   background: white;
-  box-shadow: 0 3px 4px 3px #f7f8fd;
-  border-radius: 6px;
+  box-shadow: 0 6px 10px 1px rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
 }
 nav .container .right-links .cart-icon .cart-overlay .cart-product {
   display: flex;
@@ -133,7 +141,7 @@ nav .container .right-links .cart-icon .cart-overlay p:first-child {
   color: #68707d;
 }
 nav .container .right-links .cart-icon:hover .cart-overlay {
-  opacity: 1;
+  display: block;
 }
 nav .container .right-links img {
   width: auto;
@@ -172,21 +180,10 @@ main .container .image .thumbnail img {
   border-radius: 0.5rem;
   cursor: pointer;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 main .container .image .thumbnail img:first-child {
   border: 2px solid #ff7d1a;
-  z-index: 1;
-}
-main .container .image .thumbnail img:first-child::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 5;
 }
 main .container .product-info {
   width: 20rem;
@@ -267,6 +264,113 @@ main .container .quantity a img {
 main .container .quantity a:hover {
   background-color: rgba(255, 125, 26, 0.7);
   color: white;
+}
+
+.empty-cart {
+  margin: 2rem;
+  color: #b6bcc8;
+  font-size: 12px;
+}
+
+.column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.column img {
+  z-index: -1;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 3rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Modal Content */
+  /* Next & previous buttons */
+  /* On hover, add a black background color with a little bit see-through */
+  /* Number text (1/3 etc) */
+}
+.modal .close {
+  color: black;
+  position: absolute;
+  top: 10px;
+  right: 24rem;
+  font-size: 35px;
+  font-weight: bold;
+}
+.modal .close:hover,
+.modal .close:focus {
+  color: #ff7d1a;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal .modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 40%;
+  height: 100%;
+  max-width: 1200px;
+}
+.modal .modal-content .mySlides {
+  display: none;
+}
+.modal .modal-content .cursor {
+  cursor: pointer;
+}
+.modal .prev,
+.modal .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 0.5rem 1rem;
+  margin-top: -50px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: white;
+  border-radius: 100%;
+}
+.modal .prev {
+  left: -1.2rem;
+}
+.modal .next {
+  right: -1rem;
+  border-radius: 100%;
+}
+.modal .prev:hover,
+.modal .next:hover {
+  background-color: white;
+  color: #ff7d1a;
+}
+.modal .numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+.modal .demo {
+  opacity: 1;
+}
+.modal .active,
+.modal .demo:hover {
+  opacity: 1;
+}
+.modal img.hover-shadow {
+  transition: 0.3s;
+}
+.modal .hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /*# sourceMappingURL=styles.css.map */

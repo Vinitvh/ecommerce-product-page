@@ -5,6 +5,48 @@ const cartDOM = document.querySelector(".cart-product");
 const cartBtn = document.querySelector(".cart-btn");
 const checkoutBtn = document.querySelector(".checkout-btn");
 const cartItemsSpan = document.querySelector(".cart-items");
+const emptyCart = document.querySelector(".empty-cart");
+
+// Lightbox
+
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace("active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += "active";
+}
 
 // const productInCart = {
 //   id: 1234567,
@@ -29,6 +71,7 @@ const App = (function () {
       } else {
         qtyDOM.innerText = qty - 1;
         localStorage.setItem("cartNumber", JSON.stringify(qty - 1));
+        setCartNumber();
       }
     });
   };
@@ -49,6 +92,7 @@ const App = (function () {
   const displayCart = function () {
     let qty = qtyDOM.innerText;
     if (qty >= 1) {
+      cartDOM.classList.remove("empty-cart");
       cartDOM.innerHTML = ` 
       <img src="/images/image-product-1-thumbnail.jpg" alt="product-1" />
         <div class="cart-info">
@@ -69,9 +113,11 @@ const App = (function () {
       checkoutBtn.innerHTML = `<a href="#">Checkout</a>`;
     } else if (qty <= 0) {
       cartDOM.innerHTML = "Add product to the cart";
+      cartDOM.classList.add("empty-cart");
       checkoutBtn.innerHTML = "";
     } else {
       cartDOM.innerHTML = "Add product to the cart";
+      cartDOM.classList.add("empty-cart");
       checkoutBtn.innerHTML = "";
     }
 
@@ -84,13 +130,12 @@ const App = (function () {
     deleteBtn.addEventListener("click", (e) => {
       e.preventDefault();
       const element = deleteBtn.parentElement;
-      // element.remove();
-      //   checkoutBtn.innerHTML = "";
-      //   localStorage.setItem("cartNumber", 0);
-      //   setCartNumber();
-      //   qtyDOM.innerText = 0;
-      //   displayCart();
-      //   checkoutBtn.innerHTML = "Add product to the cart";
+      element.remove();
+      checkoutBtn.innerHTML = "";
+      localStorage.setItem("cartNumber", 0);
+      setCartNumber();
+      qtyDOM.innerText = 0;
+      displayCart();
     });
   };
 

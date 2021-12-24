@@ -28,7 +28,7 @@
             <div class="cart-icon">
               <img src="/images/icon-cart.svg" alt="cart" /><span
                 class="cart-items"
-                >0</span
+                ><span>0</span></span
               >
               <div class="cart-overlay">
                 <p>Cart</p>
@@ -47,10 +47,26 @@
           <div class="image">
             <img src="/images/image-product-1.jpg" alt="product1" />
             <div class="thumbnail">
-              <img src="/images/image-product-1-thumbnail.jpg" alt="" />
-              <img src="/images/image-product-2-thumbnail.jpg" alt="" />
-              <img src="/images/image-product-3-thumbnail.jpg" alt="" />
-              <img src="/images/image-product-4-thumbnail.jpg" alt="" />
+              <img
+                src="/images/image-product-1-thumbnail.jpg"
+                onclick="openModal();currentSlide(1)"
+                alt=""
+              />
+              <img
+                src="/images/image-product-2-thumbnail.jpg"
+                onclick="openModal();currentSlide(2)"
+                alt=""
+              />
+              <img
+                src="/images/image-product-3-thumbnail.jpg"
+                onclick="openModal();currentSlide(3)"
+                alt=""
+              />
+              <img
+                src="/images/image-product-4-thumbnail.jpg"
+                onclick="openModal();currentSlide(4)"
+                alt=""
+              />
             </div>
           </div>
           <div class="product-info">
@@ -76,6 +92,71 @@
           </div>
         </div>
       </main>
+    </div>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <span class="close cursor" onclick="closeModal()">&times;</span>
+      <div class="modal-content">
+        <div class="mySlides">
+          <div class="numbertext">1 / 4</div>
+          <img src="/images/image-product-1.jpg" style="width: 100%" />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">2 / 4</div>
+          <img src="/images/image-product-2.jpg" style="width: 100%" />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">3 / 4</div>
+          <img src="/images/image-product-3.jpg" style="width: 100%" />
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">4 / 4</div>
+          <img src="/images/image-product-4.jpg" style="width: 100%" />
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="/images/image-product-1-thumbnail.jpg"
+            style="width: 100%"
+            onclick="currentSlide(1)"
+            alt=""
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="/images/image-product-2-thumbnail.jpg"
+            style="width: 100%"
+            onclick="currentSlide(2)"
+            alt=""
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="/images/image-product-3-thumbnail.jpg"
+            style="width: 100%"
+            onclick="currentSlide(3)"
+            alt=""
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="/images/image-product-4-thumbnail.jpg"
+            style="width: 100%"
+            onclick="currentSlide(4)"
+            alt=""
+          />
+        </div>
+      </div>
     </div>
     <script src="main.js"></script>
   </body>
