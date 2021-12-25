@@ -2,7 +2,7 @@
   "name": "ecommerce-product-page-main",
   "version": "1.0.0",
   "description": "This project is a solution for Frontend mentor's ecommerce-product-page solution.",
-  "main": "dist/main.js",
+  "main": "main.js",
   "scripts": {
     "sass": "sass --watch scss/styles.scss dist/styles.css"
   },
